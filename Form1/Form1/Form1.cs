@@ -18,12 +18,31 @@ namespace Form1
     {
         Bitmap image;
         Rectangle rect;
-        private int matches = 25;
-        private int players = 0;
-        private int enemys = 0;
+        private int matches;
+        private int players;
+        private int enemys;
         public  bool IsEven(int a)
         {
             return (a % 2) == 0;
+        }
+        private void Reset() 
+        {
+           matches = 25;
+           players = 0;
+           enemys = 0;
+            textBox2.Text = "25";
+            textBox1.Text = "0";
+        }
+        private void drawmatch()
+        {
+            Bitmap image = new Bitmap(@"H:\Match.png");
+            Graphics x = this.CreateGraphics();
+            x.Clear(Color.Transparent);
+            for (int i = 0; i < matches; i++)
+            {
+                rect = new Rectangle(0 + i * 15, 50, image.Width, image.Height);
+                x.DrawImage(image, rect);
+            }
         }
         private void DrawImageRect(PaintEventArgs e)
         {
@@ -59,7 +78,7 @@ namespace Form1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("1 match taken");
+            MessageBox.Show("1 matchs taken");
             matches--;
             players++;
             textBox2.Text = matches.ToString();
@@ -68,7 +87,7 @@ namespace Form1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("2 match taken");
+            MessageBox.Show("2 matchs taken");
             matches = matches - 2;
             players = players + 2;
             textBox2.Text = matches.ToString();
@@ -77,23 +96,23 @@ namespace Form1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("3 match taken");
+            MessageBox.Show("3 matchs taken");
             matches = matches - 3;
             players = players + 3;
             textBox2.Text = matches.ToString();
             textBox1.Text = players.ToString();
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            Bitmap image = new Bitmap(@"H:\Match.png");
-            Graphics x = this.CreateGraphics();
-            x.Clear(Color.Transparent);
-            for (int i = 0; i < matches; i++)
-            {
-                rect = new Rectangle(0+i*15, 0, image.Width, image.Height);
-                x.DrawImage(image, rect);
-            }
+            /* Bitmap image = new Bitmap(@"H:\Match.png");
+             Graphics x = this.CreateGraphics();
+             x.Clear(Color.Transparent);
+             for (int i = 0; i < matches; i++)
+             {
+                 rect = new Rectangle(0+i*15, 50, image.Width, image.Height);
+                 x.DrawImage(image, rect);
+             }*/
+            drawmatch();
             if (matches < 3) button3.Enabled = false;
             if (matches < 2) button2.Enabled = false;
             if (matches < 1) button1.Enabled = false;
@@ -116,6 +135,15 @@ namespace Form1
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Reset();
+            drawmatch();
+            button3.Enabled = true;
+            button2.Enabled = true;
+            button1.Enabled = true;
         }
     }
 }
