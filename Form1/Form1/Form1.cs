@@ -12,6 +12,8 @@ using System.Drawing.Drawing2D;
 using Microsoft.Win32;
 using Form1.Properties;
 
+using enem;
+
 namespace Form1
 {
     public partial class Form1 : Form
@@ -21,6 +23,7 @@ namespace Form1
         private int matches;
         private int players;
         private int enemys;
+        enemy oponent = new enemy();
         public  bool IsEven(int a)
         {
             return (a % 2) == 0;
@@ -32,6 +35,23 @@ namespace Form1
            enemys = 0;
             textBox2.Text = "25";
             textBox1.Text = "0";
+            // oponent.allscore = matches;
+            // oponent.enemyscore = players;
+            //oponent.myscore = enemys;
+           oponent.getinfo(enemys, players, matches);
+        }
+        private void victory() {
+            if (matches <= 0)
+            {
+                if (IsEven(players) == true)
+                {
+                    MessageBox.Show("You won!");
+                }
+                else
+                {
+                    MessageBox.Show("You lose");
+                }
+            }
         }
         private void drawmatch()
         {
@@ -78,9 +98,16 @@ namespace Form1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("1 matchs taken");
-            matches--;
-            players++;
+            MessageBox.Show("3 matchs taken");
+            matches = matches - 1;
+            players = players + 1;
+            victory();
+            oponent.getinfo(enemys, players, matches);
+            var exitTurple = oponent.myturn(enemys, players, matches);
+            enemys = exitTurple.Item1;
+            players = exitTurple.Item2;
+            matches = exitTurple.Item3;
+            textBox3.Text = enemys.ToString();
             textBox2.Text = matches.ToString();
             textBox1.Text = players.ToString();
         }
@@ -90,6 +117,13 @@ namespace Form1
             MessageBox.Show("2 matchs taken");
             matches = matches - 2;
             players = players + 2;
+            victory();
+            oponent.getinfo(enemys, players, matches);
+            var exitTurple = oponent.myturn(enemys, players, matches);
+            enemys = exitTurple.Item1;
+            players = exitTurple.Item2;
+            matches = exitTurple.Item3;
+            textBox3.Text = enemys.ToString();
             textBox2.Text = matches.ToString();
             textBox1.Text = players.ToString();
         }
@@ -99,6 +133,13 @@ namespace Form1
             MessageBox.Show("3 matchs taken");
             matches = matches - 3;
             players = players + 3;
+            victory();
+            oponent.getinfo(enemys, players, matches);
+            var exitTurple = oponent.myturn(enemys, players, matches);
+            enemys = exitTurple.Item1;
+            players = exitTurple.Item2;
+            matches = exitTurple.Item3;
+            textBox3.Text = enemys.ToString();
             textBox2.Text = matches.ToString();
             textBox1.Text = players.ToString();
         }
