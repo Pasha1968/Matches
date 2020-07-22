@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 H:\Game\Matches\Form1\Form1\bin\Debug\Form1.exe.config
 H:\Game\Matches\Form1\Form1\bin\Debug\Form1.exe
 H:\Game\Matches\Form1\Form1\bin\Debug\Form1.pdb
@@ -8,3 +9,18 @@ H:\Game\Matches\Form1\Form1\obj\Debug\Form1.csproj.GenerateResource.cache
 H:\Game\Matches\Form1\Form1\obj\Debug\Form1.csproj.CoreCompileInputs.cache
 H:\Game\Matches\Form1\Form1\obj\Debug\Form1.exe
 H:\Game\Matches\Form1\Form1\obj\Debug\Form1.pdb
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.Form2.resources
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.Form3.resources
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.Form4.resources
+=======
+H:\Game\Matches\Form1\Form1\bin\Debug\Form1.exe.config
+H:\Game\Matches\Form1\Form1\bin\Debug\Form1.exe
+H:\Game\Matches\Form1\Form1\bin\Debug\Form1.pdb
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.csprojAssemblyReference.cache
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.Form1.resources
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.Properties.Resources.resources
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.csproj.GenerateResource.cache
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.csproj.CoreCompileInputs.cache
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.exe
+H:\Game\Matches\Form1\Form1\obj\Debug\Form1.pdb
+>>>>>>> b30dd1c82299db585f2c0fdacde1c296de9480fe
